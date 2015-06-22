@@ -92,6 +92,8 @@ To have the content fit to the main area, use `fit` attribute.
     paper-toolbar {
       background-color: #526E9C;
       color: #fff;
+      
+      font-size: 150%;
     }
 
     #drawerPanel:not([narrow]) #menuButton {
@@ -111,11 +113,11 @@ To have the content fit to the main area, use `fit` attribute.
     <paper-header-panel id="headerPanel" main mode="{{mode}}">
 
       <paper-toolbar>
-        <template is="x-if" if="{{!rightDrawer}}">
+        <template is="dom-if" if="{{!rightDrawer}}">
           <paper-icon-button id="menuButton" icon="menu" on-click="togglePanel"></paper-icon-button>
         </template>
         <content select="[tool]"></content>
-        <template is="x-if" if="{{rightDrawer}}">
+        <template is="dom-if" if="{{rightDrawer}}">
           <paper-icon-button id="menuButton" icon="menu" on-click="togglePanel"></paper-icon-button>
         </template>
       </paper-toolbar>
